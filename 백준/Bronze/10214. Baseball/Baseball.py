@@ -1,5 +1,6 @@
+import sys
+input = sys.stdin.readline
 t = int(input())
-
 for _ in range(t):
     yt, kt = 0, 0
     for _ in range(9):
@@ -13,4 +14,3 @@ for _ in range(t):
             print('Korea')
         else:
             print('Draw')
-        
