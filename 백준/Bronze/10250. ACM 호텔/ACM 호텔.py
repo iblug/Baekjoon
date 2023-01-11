@@ -1,7 +1,7 @@
 T = int(input())
 
 for _ in range(T):
-    h, w, n = map(int, input().split())
+    h, _, n = map(int, input().split())
     if n % h == 0:
         c = h
         r = n // h
