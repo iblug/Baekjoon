@@ -9,9 +9,6 @@ for i in range(len(s)):
         count += 1
         temp = num
 
-if count % 2 == 0:
-    result = count // 2
-else:
-    result = (count // 2) + 1
+result = (count + 1) // 2
 
 print(result)
