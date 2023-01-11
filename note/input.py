@@ -109,7 +109,8 @@ print(data)
 # 표준입력을 파일/읽기로 설정
 sys.stdin = open('input.txt','r') # mode r
 
-
+# # 입출력 읽기 쓰기
+# # https://blog.naver.com/khsu777/222811116400
 
 
 open(0).read() == sys.stdin.read()

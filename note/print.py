@@ -9,12 +9,13 @@
 # # join 활용 리스트 출력
 # str = 'hello'
 # print(' '.join(str))
+#
 # arr = ['1', '2', '3'] # 문자열만 가능
 # print(' '.join(arr))
+# print(' '.join(map(str, arr))) # 숫자형일때
 
 
-
-# 인덱싱 슬라이스 스텝 출력
+# 인덱싱 - 슬라이스 스텝 출력
 # a = [1, 2, 3, 4, 5]
 # print(a[2::1])
 #

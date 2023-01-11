@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/4673
+# 셀프 넘버
 
 a = [i for i in range(1, 10000)]
 for i in range(1, 10000):

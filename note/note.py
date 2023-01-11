@@ -10,6 +10,8 @@
 #     if i%10 == 0:
 #         print()
 
+# 대소문자 전환
+# string.swapcase()
 
 # # 배열 회전
 # n = 5
@@ -62,27 +64,7 @@
 
 # 시퀀스 정리
 
-
-
-
-# # 출력 방법
-# n, m = map(int, input().split())
-# l, k = list(map(int, input().split(' ')))
-
-# print(n,m)
-# print(l,k)
-
-# a, b = map(int, input().split())
-# print(a + b)
-# print(a - b)
-# print(a * b)
-# print(a // b)
-# print(a % b)
-# print(a+b, '\n', a-b, '\n', a*b, '\n', a//b, '\n', a % b, sep='')
-# print('\n'.join(map(str, [a + b, a - b, a * b, a // b, a % b])))
-
-
-
+# sorted() 옵션
 
 # # 출력방법
 # w = list(map(int, input().split()))
@@ -98,6 +80,13 @@
 # w=input().split()
 # a=[1,1,2,2,2,8]
 # print(*(list(a[i]-int(w[i])for i in range(6))))
+
+
+# # .index() 와 .find() 차이점
+
+
+
+
 
 
 
@@ -126,3 +115,55 @@
 
 # 1541 잃어버린 괄호 숏코딩 풀이
 # https://bio-info.tistory.com/125#%EC%88%8F%EC%BD%94%EB%94%A91
+
+
+
+
+
+
+
+# # ===========================================================
+
+# # 쓸데없는거
+
+# # 문자열로된 리스트
+#
+# import ast
+#
+# S = '[[1, 2, 3], [4, 5, 6]' # 문자열으로 입력
+# print(S)
+# print(type(S))
+# N = ast.literal_eval(S)
+# print(N)
+# print(type(N))
+
+
+
+
+
+# # 딕셔너리 병합
+# # '|' or merge
+# merged = {**dictionary_one, **dictionary_two} 
+# first_dictionary = {'name': 'Fatos', 'location': 'Munich'}
+# second_dictionary = {'name': 'Fatos', 'surname': 'Morina',
+#                      'location': 'Bavaria, Munich'}
+#
+# result = first_dictionary | second_dictionary
+# print(result)  
+# # {'name': 'Fatos', 'location': 'Bavaria, Munich', 'surname': 'Morina'}
+#
+# d1.update(d2)
+#
+# # https://codechacha.com/ko/python-merge-two-dict/
+#
+# 
+
+# # 문자열 첫시작(index 0 을 사용하지 않고)
+# my_string = "abcdef" 
+# print(my_string.startswith("b")) # False
+
+
+# # 딕셔너리 키-값 교환
+# dictionary = {"a": 1, "b": 2, "c": 3}
+# reversed_dictionary = {j: i for i, j in dictionary.items()}
+# print(reversed)  # {1: 'a', 2: 'b', 3: 'c'}
