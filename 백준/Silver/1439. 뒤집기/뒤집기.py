@@ -1,14 +1,12 @@
-s = input()
+data = input()
 
+temp = data[0]
 count = 0
-temp = int(s[0])
 result = 0
-for i in range(len(s)):
-    num = int(s[i])
+
+for num in data:
     if temp != num:
-        count += 1
         temp = num
+        count += 1
 
-result = (count + 1) // 2
-
-print(result)
+print((count + 1) // 2)
