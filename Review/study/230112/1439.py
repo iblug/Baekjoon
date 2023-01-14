@@ -16,11 +16,10 @@ for num in data:
         count += 1
         temp = num   
 
-if count % 2 == 0:
-    result = count // 2
-else:
-    result = (count // 2) + 1
+result = (count + 1) // 2
+# if count % 2 == 0:
+#     result = count // 2
+# else:
+#     result = (count // 2) + 1
 
 print(result)
-
-# result = (count + 1) // 2

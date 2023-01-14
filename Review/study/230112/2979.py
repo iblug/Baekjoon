@@ -1,5 +1,9 @@
 # https://www.acmicpc.net/problem/2979
 # 트럭 주차
+
+import sys
+sys.stdin = open('input.txt', 'r')
+
 a, b, c = map(int, input().split())
 data = [0] * 101
 for _ in range(3):
