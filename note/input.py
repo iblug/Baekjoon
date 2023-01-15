@@ -117,3 +117,5 @@ open(0).read() == sys.stdin.read()
 # open(0)을 쓰면 import sys 가 필요 없다!!!!!!!!!
 # https://it-neicebee.tistory.com/m/118
 # 표준 입력 # 그냥 참고
+
+input = sys.stdin.readline

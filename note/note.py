@@ -90,15 +90,34 @@
 # l = a * b
 # while a:
 #     b, a = a, b % a
-
 # print(b, l // b)
 
+# 리스트안에있는 딕셔너리 정렬
+# key lambda
+# itemgetter?
 
 
 
+'''
+# list comprehension 과 람다
+# result = [i**3 for i in range(1, 4)]
+# print(result)
 
+# numbers = ['1', '2', '3']
+# result = lambda x : int(x) in numbers
+# print(result)
 
+# numbers = [1, 2, 3, 4, 5, 6, 7]
+# print(list(map(lambda n: n % 3, numbers)))
+'''
 
+# import
+# 큐
+# from collections import deque
+# 콤비
+# from itertools import combinations
+# 조합?
+# from itertools import permutations
 
 
 
