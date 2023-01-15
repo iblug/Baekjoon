@@ -85,7 +85,13 @@
 # # .index() 와 .find() 차이점
 
 
+# 최대공약수와 최소공배수(GCD, LCM)
+# a, b = map(int, input().split())
+# l = a * b
+# while a:
+#     b, a = a, b % a
 
+# print(b, l // b)
 
 
 
