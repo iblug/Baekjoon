@@ -9,4 +9,4 @@ for _ in range(N):
     result[int(x)] += 1
 for i in range(1, 10001):
     for _ in range(result[i]):
-        print(i)
+        sys.stdout.write(str(i)+'\n')
