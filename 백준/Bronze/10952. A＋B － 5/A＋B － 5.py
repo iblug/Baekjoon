@@ -1,5 +1,5 @@
 while True:
-    r = sum(map(int, input().split()))
-    if r == 0:
+    a, b = map(int, input().split())
+    if a == b == 0:
         break
-    print(r)
+    print(a+b)
