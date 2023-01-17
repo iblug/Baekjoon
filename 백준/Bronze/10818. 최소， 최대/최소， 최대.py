@@ -1,4 +1,3 @@
-x = int(input())
-a = set(map(int, input().split()))
-
-print(min(a), max(a))
+N = input()
+arr = list(map(int, input().split()))
+print(min(arr), max(arr))
