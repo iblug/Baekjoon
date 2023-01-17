@@ -9,10 +9,8 @@ for i in range(2, M+1):
             continue
         else:
             graph[j] = 1
-result = []
-for x in range(M-N+1):
-    if graph[x+N] == 0:
-        result.append(x+N)
+
+result = [x for x in range(N, M+1) if graph[x] == 0]
 
 if result:
     print(sum(result), result[0], sep='\n')
