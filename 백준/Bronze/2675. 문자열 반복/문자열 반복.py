@@ -1,10 +1,7 @@
-t = int(input())
+T = int(input())
 
-for _ in range(t):
-    result = ''
-    r, s = input().split()
-
-    for i in s:
-        for _ in range(int(r)):
-            result += i
-    print(result)
+for _ in range(T):
+    a, b = input().split()
+    for i in b:
+        print(i*int(a), end='')
+    print()
