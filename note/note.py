@@ -118,46 +118,14 @@
 # from itertools import combinations
 # 조합?
 # from itertools import permutations
+# 정렬
+# from operator import itemgetter
 
 
 
-
-
-####################################################################
-# 숏코딩
-
-# # 윤년 숏코딩 분해
-# y=list(map(int, input().split()))
-# for i in range(len(y)):
-#     print(+((y[i]%100 or y[i]//100)%4<1))
-#     print(f'(1) {y[i]} % 100 =', y[i]%100)
-#     print(f'(2) {y[i]} // 100 =', y[i]//100)
-#     print(f'(3) (1) or (2) =', y[i]%100 or y[i]//100)
-#     print(f'(4) (3) % 4 =', (y[i]%100 or y[i]//100)%4, '\n')
-
-# # 숏코딩 사분면
-# a,b=map(int,open(0))
-# print('3421'[a>0::2][b>0]) 
-
-# 1541 잃어버린 괄호 숏코딩 풀이
-# https://bio-info.tistory.com/125#%EC%88%8F%EC%BD%94%EB%94%A91
-
-# in : 0 4 2 5 6
-# print(input()[::2])
-# out : '04256'
-
-
-# for i in open(0):
-#     a, b, c = i.split()
-#     print(a, b, c)
-#
-# print("wrriognhgt"[a*a+b*b==c*c:a*b:2]
-
-
-# := 활용하기
 # # ===========================================================
 
-# # 쓸데없는거
+# # 기타 등등
 
 # # 문자열로된 리스트
 #
@@ -199,4 +167,17 @@
 # # 딕셔너리 키-값 교환
 # dictionary = {"a": 1, "b": 2, "c": 3}
 # reversed_dictionary = {j: i for i, j in dictionary.items()}
-# print(reversed)  # {1: 'a', 2: 'b', 3: 'c'}
+# print(reversed_dictionary)  # {1: 'a', 2: 'b', 3: 'c'}
+
+# import __ as **
+# **.~ 로 쓸 수 있다
+
+
+# *b이후의 값을 list로 b에 저장
+# 숏코딩때 유용
+# a,*b=map(int,sys.stdin.readline().split()) # *b
+
+# import sys
+# sys.stdin = open('input.txt', 'r')
+# a = sys.stdin.read().split()
+# print(a)
