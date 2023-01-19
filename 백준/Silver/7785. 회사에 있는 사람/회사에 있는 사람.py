@@ -6,7 +6,6 @@ N = int(input())
 is_in = {}
 for _ in range(N):
     a, b = input().split()
-    is_in[a] = is_in.get(a, b)
     is_in[a] = b
 result = [i for i in is_in if is_in[i] == 'enter']
 
