@@ -7,5 +7,4 @@ r = {}
 for _ in range(N):
     a = input().rstrip()
     r[a[:-6]] = a[-1]
-c = [i for i in r if r[i] == 'r']
-print('\n'.join(sorted(c, reverse=True)))
+print('\n'.join(sorted([i for i in r if r[i] == 'r'], reverse=True)))
