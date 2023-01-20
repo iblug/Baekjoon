@@ -1,7 +1,5 @@
-import sys
-input=sys.stdin.readline
+_,*n=open(0)
 r={}
-for _ in range(int(input())):
- a=input().rstrip()
- r[a[:-6]]=a[-1]
+for j in n:
+ r[j[:-7]]=j[-2]
 print('\n'.join(sorted([i for i in r if r[i]=='r'],reverse=1)))
