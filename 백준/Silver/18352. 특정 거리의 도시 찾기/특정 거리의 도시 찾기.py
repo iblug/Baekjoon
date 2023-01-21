@@ -1,6 +1,7 @@
 import sys
 from collections import deque
 input = sys.stdin.readline
+print = sys.stdout.write
 INF = 1e9
 
 # 도시의 개수, 도로의 개수, 거리 정보, 출발 도시의 번호
@@ -23,8 +24,9 @@ while q:
         for i in graph[now]:
             q.append(i)
             distance[i] = min(distance[now]+1, distance[i])
-result = [j for j in range(N+1) if distance[j] == K]
-if result:
-    print(*result,sep='\n')
-else:
-    print(-1)
+
+for j in range(N+1):
+    if distance[j] == K:
+        print(str(j)+'\n')
+if K not in distance:
+    print(str(-1))
