@@ -1,8 +1,9 @@
-data = set(int(input()) for _ in range(9))
+from itertools import combinations
 
-over = sum(data) - 100
-for i in data:
-    if (over - i) in data:
-        result = sorted(data-{i, over-i})
+d = [int(input()) for _ in range(9)]
+s = combinations(d, 7)
+
+for c in s:
+    if sum(c) == 100:
+        print(*sorted(c), sep='\n')
         break
-print(*result, sep='\n')
