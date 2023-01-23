@@ -1,3 +1,5 @@
-n,*a=map(int,open(0).read().split())
+import sys
+input = sys.stdin.read
+n,*a=map(int,input().split())
 a.sort()
 print('\n'.join(map(str,a)))
