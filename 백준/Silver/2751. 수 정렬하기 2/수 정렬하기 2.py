@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-n = int(input())
-a = [int(input()) for _ in range(n)]
+n,*a=map(int,open(0).read().split())
 a.sort()
-print('\n'.join(map(str, a)))
+print('\n'.join(map(str,a)))
