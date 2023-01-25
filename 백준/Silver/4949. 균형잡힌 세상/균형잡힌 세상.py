@@ -40,7 +40,6 @@ while True:
     a = input().rstrip()
     if a == '.':
         break
-    c = True
     l = len(a)
     i = 0
     while i < l:
