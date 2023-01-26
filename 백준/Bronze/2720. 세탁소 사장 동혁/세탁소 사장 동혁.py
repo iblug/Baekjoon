@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 coins = [0] * 4
 Q = 0.25
 D = 0.1
