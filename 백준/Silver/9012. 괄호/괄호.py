@@ -1,17 +1,38 @@
-t = int(input())
-for _ in range(t):
-    s = input()
-    r = 0
-    for a in s:
-        if a == '(':
-            r += 1
-        elif a == ')':
-            r -= 1
-            if r < 0:
-                print('NO')
-                break
-    else:
-        if r == 0:
-            print('YES')
+import sys
+input = sys.stdin.readline
+
+def check(i):
+    while i < l:
+        if a[i] == '(':
+            i += 1
+            i = check(i)
+        elif a[i] == ')':
+            return i+1
         else:
-            print('NO')
+            i += 1
+        if i == False:
+            return False
+    return False
+    
+n = int(input())
+c = 'YES'
+for _ in range(n):
+    a = input().rstrip()
+    l = len(a) # 배열의 길이
+    i = 0
+    while i < l:
+        if a[i] == '(':
+            i += 1
+            i = check(i)
+        elif a[i] == ')':
+            i = False
+            break
+        else:
+            i += 1
+        if i == False:
+            break
+    if i == False:
+        c = 'NO'
+    else:
+        c = 'YES'
+    print(c)
