@@ -1,13 +1,14 @@
 import sys
 input = sys.stdin.readline
 
-data = [list(map(int, input().split())) for _ in range(9)]
 max_ = 0
+data = []
+
 for i in range(9):
-    for j in range(9):
-        if data[i][j] >= max_:
-            i_ = i
-            j_ = j
-            max_ = data[i][j]
+    data.append(list(map(int, input().split())))
+    if max(data[-1]) >= max_:
+        i_ = i
+        max_ = max(data[-1])
+l = data[i_]
 print(max_)
-print(i_+1, j_+1)
+print(i_+1, l.index(max_)+1)
