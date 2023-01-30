@@ -5,4 +5,4 @@ for _ in range(4):
     for x in range(i, k):
         for y in range(j, l):
             g[x][y] = 1
-print(sum(map(lambda x: x.count(1), g)))
+print(sum(map(sum, g)))
