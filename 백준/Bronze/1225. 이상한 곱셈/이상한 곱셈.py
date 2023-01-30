@@ -1,8 +1,6 @@
 a, b = input().split()
-a = list(map(int, a.replace('0','')))
-b = list(map(int, b.replace('0','')))
 result = 0
-
+sum_ = sum(map(int, b))
 for a1 in a:
-    result += a1 * sum(b)
+    result += int(a1) * sum_
 print(result)
