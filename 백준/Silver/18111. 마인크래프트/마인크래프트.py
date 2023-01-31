@@ -1,29 +1,26 @@
 import sys
-input = sys.stdin.readline
+from collections import Counter
 
-n, m, b = map(int, input().split())
-sum_ = 0
-data = [list(map(int, input().split())) for _ in range(n)]
-for _ in range(n):
-    lst = list(map(int, input().split()))
-    data.append(lst)
+n, m, inven = map(int, sys.stdin.readline().split())
+ground = []
+for _ in range(n): ground += map(int, sys.stdin.readline().split())
+height, time = 0, 1000000000000000
 
-time = 1e9
-height = 256
-while height >= 0:
-    cnt = 0
-    b_p, b_m = 0, 0
-    for i in data:
-        for j in i:
-            if j > height:
-                b_m += j - height
-            else:
-                b_p += height - j
-    if b_p <= b_m + b:
-        cnt = b_p + b_m*2
-        if cnt < time:
-            time = cnt
-        else:
-            break
-    height -= 1
-print(time, height+1)
+min_h = min(ground)
+max_h = max(ground)
+_sum = sum(ground)
+ground = dict(Counter(ground))
+
+for i in range(min_h, max_h + 1):
+    if _sum + inven >= i * n * m:
+        cur_time = 0
+        for key in ground:
+            if key > i:
+                cur_time += (key - i) * ground[key] * 2
+            elif key < i:
+                cur_time += (i - key) * ground[key]
+        if cur_time <= time:
+            time = cur_time
+            height = i
+
+print(time, height)
