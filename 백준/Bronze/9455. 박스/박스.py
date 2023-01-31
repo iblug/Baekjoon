@@ -5,7 +5,7 @@ t = int(input())
 
 for _ in range(t):
     m, n = map(int, input().split())
-    data = [list(input().rstrip().split()) for _ in range(m)]
+    data = [list(input().split()) for _ in range(m)]
     total = 0
     for n1 in range(n):
         cnt0 = cnt1 = 0
