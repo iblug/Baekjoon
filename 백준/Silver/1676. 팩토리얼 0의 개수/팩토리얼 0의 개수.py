@@ -5,14 +5,11 @@ def fact(x):
 
 n = int(input())
 
-m = fact(n)
 cnt = 0
-
-while m > 0:
-    if m % 10 == 0:
+m = str(fact(n))
+for i in range(1, len(m)):
+    if m[-i] == '0':
         cnt += 1
-        m = m // 10
     else:
         break
-
 print(cnt)
