@@ -1,11 +1,11 @@
 import sys
 input = sys.stdin.readline
 
-def dfs(graph, x, visited):
+def dfs(x):
     visited[x] = True
     for i in graph[x]:
         if visited[i] == False:
-            dfs(graph, i, visited)                
+            dfs(i)                
 
 e = int(input())
 v = int(input())
@@ -16,5 +16,5 @@ for _ in range(v):
     graph[a].append(b)
     graph[b].append(a)
 
-dfs(graph, 1, visited)
+dfs(1)
 print(visited.count(True)-1)
