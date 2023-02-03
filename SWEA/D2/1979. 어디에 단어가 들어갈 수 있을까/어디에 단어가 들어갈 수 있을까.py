@@ -1,6 +1,7 @@
 T = int(input())
 
-def find(cnt):
+def find(d):
+    global cnt
     for i in d:
         for j in range(0,n-k):
             if j == 0:
@@ -14,16 +15,15 @@ def find(cnt):
         if n == k:
             if i == key:
                 cnt += 1
-    return cnt
 
 for t in range(T):
     n, k = map(int, input().split())
     d = [list(map(int, input().split())) for _ in range(n)]
+    d_ = list(map(list, zip(*d)))
     key = [1]*k
 
-    cnt = find(0)
+    cnt = 0
+    find(d)
+    find(d_)
 
-    d = list(map(list, zip(*d)))
-    cnt = find(cnt)
-    
     print(f'#{t+1} {cnt}')
