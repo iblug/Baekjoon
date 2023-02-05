@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 def act(q:deque, com, num):
     if com == 'push':
-        q.append(num)
+        q.append(num[0])
     if com == 'pop':
         if q:
             print(q.popleft())
@@ -31,6 +31,4 @@ def act(q:deque, com, num):
 q = deque()
 for _ in range(int(input())):
     com, *num = input().rstrip().split()
-    if num:
-        num = int(num[0])
     act(q, com, num)
