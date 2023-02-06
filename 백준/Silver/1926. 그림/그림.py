@@ -2,9 +2,9 @@ import sys
 input = sys.stdin.readline
 
 def dfs(x, y):
-    global cnt
+    cnt = 0
     stack = [(x, y)]
-    d[x][y] += 1
+    d[x][y] = 2
     cnt += 1
     while stack:
         x, y = stack.pop()
@@ -16,7 +16,7 @@ def dfs(x, y):
                     stack.append((nx, ny))
                     d[nx][ny] = 2
                     cnt += 1
-
+    return cnt
 n, m = map(int,input().split())
 d = [list(map(int, input().split())) for _ in range(n)]
 
@@ -28,8 +28,7 @@ total = 0
 for x in range(n):
     for y in range(m):
         if d[x][y] == 1:
-            cnt = 0
             total += 1
-            dfs(x, y)
+            cnt = dfs(x, y)
             result = max(result, cnt)
 print(total, result,sep='\n')
