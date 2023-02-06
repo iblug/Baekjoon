@@ -1,31 +1,22 @@
 from collections import deque
-deep = 100001
 
-def bfs(x):
-    q=deque()
-    q.append(x)
-    distance[x] = 0
+n, k = map(int,input().split())
+m = max(n, k)
+g = [[i*2,i+1,i-1] for i in range(m+2)]
+vi = [1e9] * (m+2)
+visited = [False] * (m+2)
+def bfs(x,k):
+    q = deque([x])
+    vi[x] = 0
+    visited[x] = True
     while q:
-        now = q.popleft()
-        if now == k:
-            break
-        visited[now] = True
-        for i in graph[now]:
-            if not visited[i]:
-                distance[i] = min(distance[i],distance[now]+1)
-                q.append(i)
-    return distance[now]
-
-n, k = map(int, input().split())
-
-graph = [[] for _ in range(deep)]
-visited = [False] * deep
-distance = [1e9] * deep
-for i in range(0, deep):
-    if -1 < i-1:
-        graph[i].append(i-1)
-    if i+1 < deep:
-        graph[i].append(i+1)
-    if i*2 < deep:
-        graph[i].append(i*2)
-print(bfs(n))
+        x = q.popleft()
+        if x == k:
+            return vi[x]
+        for i in g[x]:
+            if 0 <= i <= m+1:
+                if not visited[i]:
+                    visited[i] = True
+                    vi[i] = min(vi[i],vi[x] + 1)
+                    q.append(i)
+print(bfs(n,k))
