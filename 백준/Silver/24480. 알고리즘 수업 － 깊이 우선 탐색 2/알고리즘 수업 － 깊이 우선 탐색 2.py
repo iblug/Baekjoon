@@ -16,7 +16,9 @@ for _ in range(m):
     a, b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
-graph = [sorted(d,reverse=True) for d in graph]
+
+for d in graph:
+    d.sort(reverse=True)
 cnt = 0
 result = [0]*(n+1)
 dfs(r)
