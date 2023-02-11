@@ -1,27 +1,21 @@
 import sys
 input = sys.stdin.readline
 
-def re(k):
-    global result, ans
+from itertools import product
 
-    if len(result) >= l-1 and n >= int(result):
-        ans = max(ans, int(result))
-
-    if len(result) == l:
-        return
-
-    for i in range(m):
-        result += k[i]
-        re(k)
-        result = result[:-1]
-
-n, m = input().split()
-l = len(n)
-n = int(n)
-m = int(m)
-
+n, m = map(int, input().split())
+l = len(str(n))
 k = list(input().split())
-result = ''
 ans = 0
-re(k)
+kk = product(k,repeat=l)
+for i in kk:
+    num = int(''.join(i))
+    if n >= num:
+        ans = max(ans, num)
+if ans == 0:
+    kk = product(k,repeat=l-1)
+    for i in kk:
+        num = int(''.join(i))
+        if n >= num:
+            ans = max(ans, num)
 print(ans)
