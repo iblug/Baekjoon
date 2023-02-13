@@ -8,7 +8,6 @@ def star(n, x, y):
 
     for i in range(c):
         ans[x][y+i] = '*'
-    for i in range(c):
         ans[x+r-1][y+i] = '*'
     for i in range(r):
         ans[x+i][y] = '*'
