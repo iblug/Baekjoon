@@ -24,5 +24,6 @@ if N == 1:
     print('*')
 else:
     star(N, 0, 0)
+    ans[1] = ['*']
     for ele in ans:
-        print(''.join(ele).rstrip())
+        print(''.join(ele))
