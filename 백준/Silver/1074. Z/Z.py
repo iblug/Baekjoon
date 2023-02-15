@@ -1,17 +1,11 @@
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
 def find_(n, x, y):
-    if n == 2:
-        if x == r and y == c:
-            return 0
-        elif x == r and y+1 == c:
-            return 1
-        elif x+1 == r and y == c:
-            return 2
-        elif x+1 == r and y+1 == c:
-            return 3
-        
+    if n == 1:
+        return 0
+    
     g = n//2
     nx = x + g
     ny = y + g
