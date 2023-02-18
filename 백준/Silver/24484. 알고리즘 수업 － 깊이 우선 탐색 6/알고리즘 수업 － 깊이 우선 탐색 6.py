@@ -5,6 +5,7 @@ sys.setrecursionlimit(10**6)
 def dfs(x,t):
     global cnt
     cnt += 1
+    v[x] = True
     d[x] = cnt*t
     for c in graph[x]:
         if not v[c]:
@@ -24,6 +25,5 @@ for e in graph:
     e.sort(reverse=True)
 
 cnt = 0
-v[r] = True
 dfs(r, 0)
 print(sum(d))
