@@ -3,11 +3,9 @@ input = sys.stdin.readline
 
 def dfs(x, y):
     st = [(x, y)]
+    visited[x][y] = True
     while st:
         x, y = st.pop()
-        if visited[x][y]:
-            continue
-        visited[x][y] = True
         for dx, dy in d:
             nx = x + dx
             ny = y + dy
@@ -15,6 +13,7 @@ def dfs(x, y):
                 continue
             if not visited[nx][ny] and graph[nx][ny] > h:
                 st.append((nx, ny))
+                visited[nx][ny] = True
 
 n = int(input())
 graph = [list(map(int, input().split())) for _ in range(n)]
