@@ -13,23 +13,15 @@ def dfs(x, y):
             dfs(nx, ny)
 
 n = int(input())
-s = set()
-graph = []
-m = 1e9
-for _ in range(n):
-    a = list(map(int, input().split()))
-    m = min(m, min(a))
-    graph.append(a)
-    s.update(set(a))
-
-s.add(m-1)
-s = sorted(s)    
+graph = [list(map(int, input().split())) for _ in range(n)]
+M = max(map(max, graph))
+m = min(map(min, graph))
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
 a = 0
-for d in s:
+for d in range(m-1, M):
     cnt = 0
     visited = [[False] * n for _ in range(n)]
     for i in range(n):
