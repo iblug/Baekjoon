@@ -1,16 +1,19 @@
 import sys
-sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
 def dfs(x, y):
+    st = [(x, y)]
     visited[x][y] = True
-    for idx in range(4):
-        nx = x + dx[idx]
-        ny = y + dy[idx]
-        if 0 > nx or nx >= n or 0 > ny or ny >= n:
-            continue
-        if not visited[nx][ny] and graph[nx][ny] > d:
-            dfs(nx, ny)
+    while st:
+        x, y = st.pop()
+        visited[x][y] = True
+        for idx in range(4):
+            nx = x + dx[idx]
+            ny = y + dy[idx]
+            if 0 > nx or nx >= n or 0 > ny or ny >= n:
+                continue
+            if not visited[nx][ny] and graph[nx][ny] > d:
+                st.append((nx, ny))
 
 n = int(input())
 graph = [list(map(int, input().split())) for _ in range(n)]
