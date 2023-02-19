@@ -2,16 +2,18 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
+
 def bfs():
     while q:
         x, y, c = q.popleft()
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
-            if 0 <= nx < n and 0 <= ny < m:
-                if not graph[nx][ny]:
-                    q.append((nx, ny, c+1))
-                    graph[nx][ny] = c+1
+            if 0 > nx or nx >= n or 0 > ny or ny >= m:
+                continue
+            if not graph[nx][ny]:
+                q.append((nx, ny, c+1))
+                graph[nx][ny] = c+1
 
 def check(g):
     max_ = 0
