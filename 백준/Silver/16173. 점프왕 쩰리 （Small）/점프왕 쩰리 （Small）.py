@@ -11,12 +11,10 @@ def dfs(x, y):
         visited[x][y] = True
         if j == 0:
             continue
-        nx = x+j
-        ny = y+j
-        if nx < n and not visited[nx][y]:
-            s.append((nx, y))
-        if ny < n and not visited[x][ny]:
-            s.append((x, ny))
+        if x+j < n and not visited[x+j][y]:
+            s.append((x+j, y))
+        if y+j < n and not visited[x][y+j]:
+            s.append((x, y+j))
     return False
 
 n = int(input())
