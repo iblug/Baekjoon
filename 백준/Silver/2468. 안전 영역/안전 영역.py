@@ -3,9 +3,10 @@ input = sys.stdin.readline
 
 def dfs(x, y):
     st = [(x, y)]
-    visited[x][y] = True
     while st:
         x, y = st.pop()
+        if visited[x][y]:
+            continue
         visited[x][y] = True
         for idx in range(4):
             nx = x + dx[idx]
