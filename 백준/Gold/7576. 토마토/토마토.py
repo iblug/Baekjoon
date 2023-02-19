@@ -4,14 +4,14 @@ input = sys.stdin.readline
 
 def bfs():
     while q:
-        x, y = q.popleft()
+        x, y, c = q.popleft()
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < n and 0 <= ny < m:
                 if not graph[nx][ny]:
-                    q.append((nx, ny))
-                    graph[nx][ny] = graph[x][y]+1
+                    q.append((nx, ny, c+1))
+                    graph[nx][ny] = c+1
 
 def check(g):
     max_ = 0
@@ -32,6 +32,6 @@ for i in range(n):
     graph.append(a)
     for j in range(m):
         if a[j] == 1:
-            q.append((i, j))
+            q.append((i, j, 1))
 bfs()
 print(check(graph))
