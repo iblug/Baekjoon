@@ -329,12 +329,14 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,pycharm,visualstudiocode,python
 
-**/test.py
-임시/
-
 .idea/
 #*.iml
 #*.idea
-input.txt
+
+**/test*
+**/임시*/
+**/input*.txt
+**/**_other.py
 123.txt
 note.txt
+**/note/
