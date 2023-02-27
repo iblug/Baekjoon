@@ -1,1 +1,1 @@
-print(input()+'\n1')
+print(input(),1)
