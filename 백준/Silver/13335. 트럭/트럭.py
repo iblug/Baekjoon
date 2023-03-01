@@ -8,15 +8,20 @@ q = deque([0]*w)
 
 i = 0
 time = 0
-while i < n:
+now = t[0]
+while True:
     q.popleft()
-    now = t[i]
     if sum(q) + now > L:
         q.append(0)
+        time += 1
     else:
         q.append(now)
+        time += 1
         i += 1
-    time += 1
+        if i < n:
+            now=t[i]
+        else:
+            break
 while q:
     q.popleft()
     time += 1
