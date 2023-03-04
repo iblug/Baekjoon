@@ -6,9 +6,7 @@ n = int(input())
 d = list(map(int, input().split()))
 
 s = sorted(set(d))
-r = {}
-for i in range(len(s)):
-    r[s[i]] = i
+r = {x:i for i, x in enumerate(s)}
 
 for i in d:
     print(str(r[i])+' ')
