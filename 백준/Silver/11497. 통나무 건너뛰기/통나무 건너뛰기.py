@@ -9,7 +9,11 @@ for _ in range(T):
     c1 = c2 = 0
     for i in range(n-2):
         if i & 1:
-            c1 = max(c1, l[i+2]-l[i])
+            c11 = l[i+2]-l[i]
+            if c11 > c1:
+                c1 = c11
         else:
-            c2 = max(c2, l[i+2]-l[i])
+            c22 = l[i+2]-l[i]
+            if c22 > c2:
+                c2 = c22
     print(max(c1, c2))
