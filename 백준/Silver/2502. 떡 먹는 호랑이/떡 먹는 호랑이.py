@@ -2,11 +2,11 @@ def f(a, b, d):
     a = a + b
     d += 1
     if a > K:
-        return (False, False)
+        return False
     if d > D:
-        return (False, False)
+        return False
     if a == K and d == D:
-        return (a, b)
+        return True
     
     return f(b, a, d)
 
@@ -14,8 +14,7 @@ D, K = map(int, input().split())
 flag = 0
 for i in range(1, K+1):
     for j in range(1, K+1):
-        aa, bb = f(i, j, 2)
-        if aa:
+        if f(i, j, 2):
             flag = 1
             break
     if flag:
