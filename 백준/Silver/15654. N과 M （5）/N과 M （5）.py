@@ -1,9 +1,10 @@
 def p(a, r):
     a = sorted(a)
+    a = list(map(str, a))
     v = [False]*n
     def gen(c:list, used):
         if len(c) == r:
-            print(*c)
+            print(' '.join(c))
             return
 
         for i in range(n):
