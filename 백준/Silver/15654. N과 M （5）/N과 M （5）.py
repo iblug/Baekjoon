@@ -17,5 +17,4 @@ def p(a, r):
     gen([], v)
 
 n, m = map(int, input().split())
-a = list(map(int, input().split()))
-p(a, m)
+p(list(map(int, input().split())), m)
