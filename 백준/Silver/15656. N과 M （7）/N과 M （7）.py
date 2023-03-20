@@ -1,7 +1,7 @@
 def per(a, r):
     a = sorted(a)
     def gen(c):
-        if len(c) == m:
+        if len(c) == r:
             print(' '.join(map(str, c)))
             return
         
