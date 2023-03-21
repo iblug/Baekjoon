@@ -3,14 +3,9 @@ def dfs(i, s, m):
         r.append(s)
         return
     if (g:=i+1) <= n:
-        s+=a[g]
-        dfs(g, s, m-1)
-        s-=a[g]
+        dfs(g, s+a[g], m-1)
     if (j:=i+2) <= n:
-        t = s
-        s = s//2 + a[j]
-        dfs(j,s,m-1)
-        s = t
+        dfs(j,s//2 + a[j],m-1)
     
 n, m = map(int, input().split())
 a = [0]+list(map(int, input().split()))
