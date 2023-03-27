@@ -16,4 +16,4 @@ def f(start, end):
 n, m = map(int, input().split())
 a = list(map(int, input().split()))
 
-print(f(0, int(1e13)))
+print(f(0, max(a)*m))
