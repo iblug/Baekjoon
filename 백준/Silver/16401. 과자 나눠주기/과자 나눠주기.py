@@ -1,6 +1,3 @@
-m, n = map(int, input().split())
-l = list(map(int, input().split()))
-
 def check(mid):
     c = 0
     for i in l:
@@ -15,5 +12,8 @@ def bs(lo, hi):
         return bs(mid, hi)
     else:
         return bs(lo, mid)
+        
+m, n = map(int, input().split())
+l = list(map(int, input().split()))
 
-print(bs(0, int(1e9)))
+print(bs(0, max(l)+1))
