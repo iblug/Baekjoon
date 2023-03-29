@@ -1,22 +1,20 @@
-def find_(arr, start, end):
-    mid = (start + end) // 2
-    cnt = 0
-    for i in arr:
+def check(mid):
+    c = 0
+    for i in d:
         if i > mid:
-            cnt += i - mid
-    if cnt < m:
-        end = mid - 1
-        find_(arr, start, end)
-    elif cnt >= m:
-        result.append(mid)
-        start = mid + 1
-        if start > end:
-            return True
-        find_(arr, start, end)
-    return True
+            c += i-mid
+    return c >= m
+
+def bs(lo, hi):
+    if lo+1 >= hi:
+        return lo
+    mid = lo+hi >> 1
+    if check(mid):
+        return bs(mid, hi)
+    else:
+        return bs(lo, mid)
 
 n, m = map(int, input().split())
-data = list(map(int, input().split()))
-result = []
-find_(data,0,max(data))
-print(max(result))
+d = list(map(int, input().split()))
+
+print(bs(0, max(d)))
