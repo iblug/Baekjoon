@@ -1,19 +1,14 @@
-def check(mid):
-    return (mid+1)*(n-mid+1) <= k
-
 def f(start, end):
-    if start+1 >= end:
-        return start
+    if start > end:
+        return 'NO'
     mid = start + end >> 1
-    if check(mid):
-        return f(mid, end)
+    if (mid+1)*(n-mid+1) < k:
+        return f(mid+1, end)
+    elif (mid+1)*(n-mid+1) > k:
+        return f(start, mid-1)
     else:
-        return f(start, mid)
+        return 'YES'
 
 n, k = map(int, input().split())
 
-a = f(0, n//2+1)
-if (a+1)*(n-a+1) == k:
-    print('YES')
-else:
-    print('NO')
+print(f(0, n//2+1))
