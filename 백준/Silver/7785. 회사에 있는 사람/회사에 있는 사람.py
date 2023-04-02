@@ -1,8 +1,12 @@
 import sys
-def main() -> None:
- _,*n=open(0)
- r={}
- for j in n:r[j[:-7]]=j[-2];
- print('\n'.join(sorted([i for i in r if r[i]=='r'],reverse=1)))
-if __name__ == "__main__":
-    sys.exit(main())
+
+input = sys.stdin.readline
+
+N = int(input())
+r = {}
+for _ in range(N):
+    a, b = input().split()
+    r[a] = b
+
+c = [i for i in r if r[i] == 'enter']
+print('\n'.join(sorted(c, reverse=True)))
