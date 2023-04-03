@@ -6,4 +6,4 @@ def f(a, b):
 T = int(input())
 for _ in range(T):
     a, b = map(int, input().split())
-    print(int(a*b / f(a, b)))
+    print(a*b // f(a, b))
