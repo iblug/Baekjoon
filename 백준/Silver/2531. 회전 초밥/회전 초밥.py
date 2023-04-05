@@ -8,8 +8,7 @@ a += a
 r = 0
 for i in range(n):
     eat = set(a[i:i+k])
-    if c not in eat:
-        eat.add(c)
+    eat.add(c)
     if len(eat) > r:
         r = len(eat)
 print(r)
