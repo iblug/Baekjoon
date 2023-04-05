@@ -3,6 +3,7 @@ input = sys.stdin.readline
 
 p, m = map(int, input().split())
 t = []
+
 for _ in range(p):
     a = input().rstrip().split()
     f = 0
@@ -16,6 +17,7 @@ for _ in range(p):
             break
     if not f:
         t.append([a])
+
 for i in t:
     if len(i) == m:
         print('Started!')
@@ -23,4 +25,4 @@ for i in t:
         print('Waiting!')
     k = sorted(i, key=lambda x: x[1])
     for j in k:
-        print(*j)
+        print(' '.join(map(str,j)))
