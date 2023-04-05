@@ -10,7 +10,6 @@ cnt = 0
 c = 0
 while c < k:
     cnt += 1
-    # 1
     A = A[-1:]+A[:-1]
     l = len(robot_order)
 
@@ -27,8 +26,6 @@ while c < k:
                 else:
                     robot_order.appendleft(a+1)
                     robot_belt[a], robot_belt[a+1] = 0, 1
-            elif a == n-2:
-                robot_belt[a] = 0
             else:
                 robot_belt[a] = 0
 
@@ -38,5 +35,4 @@ while c < k:
         A[0] -= 1
         if A[0] == 0:
             c += 1 
-
 print(cnt)
