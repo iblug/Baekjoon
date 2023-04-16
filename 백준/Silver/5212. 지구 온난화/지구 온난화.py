@@ -5,11 +5,9 @@ r, c = map(int, input().split())
 g = [input().rstrip() for _ in range(r)]
 
 dxy = ((0, 1),(1, 0),(0, -1),(-1, 0))
-rows = [0 for _ in range(r)]
-cols = [0 for _ in range(c)]
-a = []
+
+a = [['.']*c for _ in range(r)]
 for i in range(r):
-    m = ''
     for j in range(c):
         cnt = 0
         if g[i][j] == 'X':
@@ -27,27 +25,19 @@ for i in range(r):
                 if 0 <= nx < r and 0 <= ny < c:
                     if g[nx][ny] == '.':
                         cnt += 1
-            if cnt > 2:
-                m += '.'
-            else:
-                m += 'X'
-        else:
-            m += '.'
-    if 'X' in m:
-        s = m.index('X')
-        e = c - list(reversed(m)).index('X')
-        cols[s:e] = [1]*(e-s)
-    a.append(m)
-temp = list(zip(*a))
-for i in temp:
-    if 'X' in i:
-        s = i.index('X')
-        e = r - i[::-1].index('X')
-        rows[s:e] = [1]*(e-s)
+            if cnt <= 2:
+                a[i][j] = 'X'
 
-for i in range(r):
-    for j in range(c):
-        if rows[i] and cols[j]:
-            print(a[i][j],end='')
-    if rows[i]:
-        print()
+r_s , c_s = r, c
+r_e = c_e = 0
+for row in a:
+    if 'X' in row:
+        c_s = min(c_s, row.index('X'))
+        c_e = max(c_e, c - row[::-1].index('X'))
+temp = list(zip(*a))
+for col in temp:
+    if 'X' in col:
+        r_s = min(r_s, col.index('X'))
+        r_e = max(r_e, r - col[::-1].index('X'))
+for i in range(r_s,r_e):
+    print(''.join(a[i][c_s:c_e]))
