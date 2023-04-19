@@ -8,9 +8,6 @@ def right(a, b):
     if g[a-1][2] != g[a][6]:
         right(a+1, b*-1)
         g[a].rotate(b*-1)
-    else:
-        return
-    return
 
 def left(a, b):
     if a == -1:
@@ -18,9 +15,6 @@ def left(a, b):
     if g[a+1][6] != g[a][2]:
         left(a-1, b*-1)
         g[a].rotate(b*-1)
-    else:
-        return
-    return
 
 g = [deque(list(input().rstrip())) for _ in range(4)]
 k = int(input())
@@ -29,9 +23,7 @@ for _ in range(k):
     
     right(a, b)
     left(a-2, b)
-    
     g[a-1].rotate(b)
-
 c = 1
 r = 0
 for i in range(4):
