@@ -1,12 +1,10 @@
 import sys
 input = sys.stdin.readline
 
-# 우 하 좌 상
 dxy = ((0, 1),(1, 0),(0,-1),(-1, 0))
 
 r, c, n = map(int, input().split())
 g0 = [input().rstrip() for _ in range(r)]
-g2 = [['O']*c for _ in range(r)]
 g3 = [['O']*c for _ in range(r)]
 g1 = [['O']*c for _ in range(r)]
 for x in range(r):
