@@ -18,4 +18,4 @@ for j in s:
             stack.append(stack.pop()*a)
         elif j == '/':
             stack.append(stack.pop()/a)
-print(f'{stack[0]:.2f}')
+print('%.2f' %stack[0])
