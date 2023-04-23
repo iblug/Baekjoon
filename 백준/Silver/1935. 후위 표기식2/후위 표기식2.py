@@ -6,7 +6,7 @@ s = input().rstrip()
 l = [int(input()) for _ in range(n)]
 stack = []
 for j in s:
-    if 'A' <= j <= 'Z':
+    if j.isalpha():
         stack.append(l[ord(j)-65])
     else:
         a = stack.pop()
@@ -18,4 +18,4 @@ for j in s:
             stack.append(stack.pop()*a)
         elif j == '/':
             stack.append(stack.pop()/a)
-print(f'{stack[0]:0.2f}')
+print(f'{stack[0]:.2f}')
