@@ -17,4 +17,4 @@ for _ in range(m):
             s.pop()
     else:
         s.append(b[0])
-print(''.join(s+list(reversed(r))))
+print(''.join(s+r[::-1]))
