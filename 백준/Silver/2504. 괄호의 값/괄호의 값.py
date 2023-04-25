@@ -1,23 +1,19 @@
 import sys
-input = sys.stdin.readline
 
-s = list(input().rstrip())[::-1]
-
-def cal(start):
+s = list(input())[::-1]
+def check(c):
     r = 0
     while s:
         a = s.pop()
-        if a == "(" or a == "[":
-            r += cal(a)
-        elif start == "(" and a == ")":
-            return 2 * max(1,r)
-        elif start == "[" and a == "]":
-            return 3 * max(1,r)
-    
+        if a == '(' or a == '[':
+            r += check(a)
+        elif c == '(' and a == ')':
+            return 2*max(1, r)
+        elif c == '[' and a == ']':
+            return 3*max(1, r)
     print(0)
     sys.exit()
-
-ans = 0    
+answer = 0
 while s:
-    ans += cal(s.pop())
-print(ans)
+    answer += check(s.pop())
+print(answer)
