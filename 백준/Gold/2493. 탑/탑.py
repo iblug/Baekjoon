@@ -6,9 +6,10 @@ a = []
 for i in range(n):
     while s:
         if d[i] < s[-1][1]:
-            print(s[-1][0]+1, end=' ')
+            a.append(s[-1][0])
             break
         s.pop()
     if not s:
-        print(0, end=' ')
-    s.append((i, d[i]))
+        a.append(0)
+    s.append((i+1, d[i]))
+print(' '.join(map(str, a)))
