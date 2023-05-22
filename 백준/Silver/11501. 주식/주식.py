@@ -10,18 +10,13 @@ for _ in range(T):
     a = []
     m = max(dc)
     for i in d:
-        if i == m:
-            if dc[m] == 1:
-                dc.pop(m)
-                if dc:
-                    m = max(dc)
-            else:
-                dc[m] -= 1
-        else:
+        if i != m:
             total += m-i
 
-            if dc[i] == 1:
-                dc.pop(i)
-            else:
-                dc[i] -= 1
+        if dc[i] == 1:
+            dc.pop(i)
+            if i == m and dc:
+                m = max(dc)
+        else:
+            dc[i] -= 1
     print(total)
