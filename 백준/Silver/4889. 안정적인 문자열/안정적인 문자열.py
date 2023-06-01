@@ -11,11 +11,8 @@ while 1:
     if s[0] == '-':
         break
     for i in s:
-        if i == '}':
-            if d and d[-1] == '{':
+        if i == '}' and d and d[-1] == '{':
                 d.pop()
-            else:
-                d.append(i)
         else:
             d.append(i)
     while d:
