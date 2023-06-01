@@ -5,7 +5,7 @@ T = int(input())
 for _ in range(T):
     n = int(input())
     data = {input().rstrip() for _ in range(n)}
-    data1 = sorted(data, key=lambda x: len(x), reverse=True)
+    data1 = list(data)
     f = 0
     for i in data1:
         for j in range(len(i)):
