@@ -5,8 +5,7 @@ def solution(n, left, right):
     b = right//n
     bb = right%n
     if a == b:
-        c = [i+1 if i > a else a+1 for i in range(n)]
-        answer = c[aa:bb+1]
+        answer = [i+1 if i > a else a+1 for i in range(n)][aa:bb+1]
     else:
         answer += [i+1 if i > a else a+1 for i in range(n)][aa:]
         for k in range(a+1, b):
