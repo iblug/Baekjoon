@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 g = [1]*(123456*2+1)
 g[0], g[1] = 0, 0
 for i in range(2, int((123457*2)**0.5)+1):
