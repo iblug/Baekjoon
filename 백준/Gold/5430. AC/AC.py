@@ -3,14 +3,13 @@ input = sys.stdin.readline
 
 t = int(input())
 for _ in range(t):
-    p = input().rstrip()
+    p = input().rstrip().replace('RR','')
     n = int(input().rstrip())
     c = p.count('D')
     if c > n:
         input()
         print('error')
         continue
-    
     x = input().rstrip().replace('[','').replace(']','').split(',')
     f = 0
     s = 0
