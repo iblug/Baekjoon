@@ -14,25 +14,21 @@ def s(bnk):
         b[x][y] = 0
 
 def check(x, y):
-    s = {i for i in range(1, 10)}
+    s = [i for i in range(1, 10)]
 
     for i in range(9):
         if b[x][i] in s:
-            s.discard(b[x][i])
+            s.remove(b[x][i])
         if b[i][y] in s:
-            s.discard(b[i][y])
+            s.remove(b[i][y])
     xx = x//3 * 3
     yy = y//3 * 3
     for i in range(3):
         for j in range(3):
             if b[xx+i][yy+j] in s:
-                s.discard(b[xx+i][yy+j])
+                s.remove(b[xx+i][yy+j])
     return s
 
 b = [list(map(int, input().split())) for _ in range(9)]
-blank = []
-for i in range(9):
-    for j in range(9):
-        if b[i][j] == 0:
-            blank.append((i, j))
+blank = [(i, j) for i in range(9) for j in range(9) if b[i][j] == 0]
 s(0)
