@@ -1,34 +1,33 @@
-import sys
-input = sys.stdin.readline
+def check(a):
+    if a == 81:
+        return True
 
-def s(bnk):
-    if bnk == len(blank):
-        for i in range(9):
-            print(' '.join(map(str,b[i])))
-        exit()
-    x, y = blank[bnk]
-    c = check(x, y)
-    for i in c:
-        b[x][y] = i
-        s(bnk+1)
-        b[x][y] = 0
+    y = a//9
+    x = a % 9
+    if lst[y][x] != 0:
+        return check(a+1)
 
-def check(x, y):
-    s = [i for i in range(1, 10)]
+    for j in range(1, 10):
+        if crow[y][j] and ccol[x][j] and ccro[(y // 3) * 3 + (x // 3)][j]:
+            crow[y][j] = ccol[x][j] = ccro[(y // 3) * 3 + (x // 3)][j] = 0
+            lst[y][x] = j
+            if check(a + 1):
+                return True
+            lst[y][x] = 0
+            crow[y][j] = ccol[x][j] = ccro[(y // 3) * 3 + (x // 3)][j] = 1
+    return False
 
-    for i in range(9):
-        if b[x][i] in s:
-            s.remove(b[x][i])
-        if b[i][y] in s:
-            s.remove(b[i][y])
-    xx = x//3 * 3
-    yy = y//3 * 3
-    for i in range(3):
-        for j in range(3):
-            if b[xx+i][yy+j] in s:
-                s.remove(b[xx+i][yy+j])
-    return s
 
-b = [list(map(int, input().split())) for _ in range(9)]
-blank = [(i, j) for i in range(9) for j in range(9) if b[i][j] == 0]
-s(0)
+lst = list(list(map(int, input().split())) for _ in range(9))
+crow = [[1 for _ in range(10)] for _ in range(9)]
+ccol = [[1 for _ in range(10)] for _ in range(9)]
+ccro = [[1 for _ in range(10)] for _ in range(9)]
+for i in range(9):
+    for j in range(9):
+        if lst[i][j] != 0:
+            crow[i][lst[i][j]] = 0
+            ccol[j][lst[i][j]] = 0
+            ccro[(i//3)*3+(j//3)][lst[i][j]] = 0
+check(0)
+for i in lst:
+    print(*i)
