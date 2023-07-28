@@ -1,8 +1,6 @@
-n = int(input())
-dp = [0] * 1000001
-dp[1] = 1
-dp[2] = 2
+d = [1, 1]
 
-for k in range(3,n+1):
-    dp[k] = (dp[k-1]+ dp[k-2])%15746
-print(dp[n])
+n = int(input())
+for i in range(2, n+1):
+    d.append((d[i-2] + d[i-1])%15746)
+print(d[n])
