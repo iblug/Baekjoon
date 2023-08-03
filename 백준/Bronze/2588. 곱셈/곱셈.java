@@ -11,10 +11,17 @@ public class Main {
 		int a = Integer.parseInt(br.readLine());
 		int b = Integer.parseInt(br.readLine());
 
-		System.out.println(a * (b % 10));
-		System.out.println(a * ((b / 10) % 10));
-		System.out.println(a * ((b / 100) % 10));
-		System.out.println(a * b);
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(a * (b % 10));
+		sb.append('\n');
+		sb.append(a * ((b / 10) % 10));
+		sb.append('\n');
+		sb.append(a * ((b / 100) % 10));
+		sb.append('\n');
+		sb.append(a * b);
+		
+		System.out.println(sb);
 	}
 
 }
