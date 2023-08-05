@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+	public static void main(String[] args) throws IOException {
+		new Main().solution();
+		br.close();
+	}
+
+	private void solution() throws IOException {
+		String[] data = br.readLine().split(" ");
+		int H = Integer.parseInt(data[0]);
+		int M = Integer.parseInt(data[1]);
+
+		int h = H * 60 + M - 45;
+		if (h < 0) {
+			h += 24*60;
+		}
+		System.out.println(h/60 + " " + h%60);
+		
+	}
+
+}
