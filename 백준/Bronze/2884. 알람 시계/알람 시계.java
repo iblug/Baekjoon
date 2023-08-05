@@ -7,24 +7,20 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		new Main().solution();
-		br.close();
 	}
 
 	private void solution() throws IOException {
 		String[] data = br.readLine().split(" ");
 		int H = Integer.parseInt(data[0]);
 		int M = Integer.parseInt(data[1]);
-
-		if (M < 45) {
-			M += 15;
-			if (H == 0) {
-				H = 23;
-			} else {
-				H--;
-			}
-		} else {
-			M -= 45;
+		br.close();
+		StringBuilder sb = new StringBuilder();
+		
+		int h = H * 60 + M - 45;
+		if (h < 0) {
+			h += 24*60;
 		}
-		System.out.print(H + " " + M);	
+		sb.append(h/60).append(" ").append(h%60);
+		System.out.println(sb);
 	}
 }
