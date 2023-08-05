@@ -7,13 +7,14 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		new Main().solution();
+		br.close();
 	}
 
 	private void solution() throws IOException {
 		String[] data = br.readLine().split(" ");
 		int H = Integer.parseInt(data[0]);
 		int M = Integer.parseInt(data[1]);
-		br.close();
+
 		StringBuilder sb = new StringBuilder();
 		
 		int h = H * 60 + M - 45;
