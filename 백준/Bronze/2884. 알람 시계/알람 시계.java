@@ -15,12 +15,16 @@ public class Main {
 		int H = Integer.parseInt(data[0]);
 		int M = Integer.parseInt(data[1]);
 
-		int h = H * 60 + M - 45;
-		if (h < 0) {
-			h += 24*60;
+		if (M < 45) {
+			M += 15;
+			if (H == 0) {
+				H = 23;
+			} else {
+				H--;
+			}
+		} else {
+			M -= 45;
 		}
-		System.out.println(h/60 + " " + h%60);
-		
+		System.out.print(H + " " + M);	
 	}
-
 }
