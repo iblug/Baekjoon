@@ -12,18 +12,16 @@ public class Main {
 		System.out.print(getGrade(a));
 	}
 	private String getGrade(int x) {
-		String result;
 		if (x < 60) {
-			result = "F";
+			return "F";
 		} else if (x < 70) {
-			result = "D";
+			return "D";
 		} else if (x < 80) {
-			result = "C";
+			return "C";
 		} else if (x < 90) {
-			result = "B";
+			return "B";
 		} else {
-			result = "A";
+			return "A";
 		}
-		return result;
 	}
 }
