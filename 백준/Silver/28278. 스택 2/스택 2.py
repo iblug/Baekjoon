@@ -5,20 +5,24 @@ input = sys.stdin.readline
 N = int(input())
 s = deque()
 for _ in range(N):
-    d = input().split()
-    if d[0] == '1':
-        s.append(d[1])
-    elif d[0] == '2' and s:
-        print(s.pop())
-    elif d[0] == '2':
-        print(-1)
-    elif d[0] == '3':
-        print(len(s))
-    elif d[0] == '4' and s:
-        print(0)
-    elif d[0] == '4':
-        print(1)
-    elif d[0] == '5' and s:
-        print(s[-1])
-    elif d[0]:
-        print(-1)
+    a = input().split()
+    match (a[0]):
+        case '1':
+            s.append(a[1])
+        case '2':
+            if s:
+                print(s.pop())
+            else:
+                print(-1)
+        case '3':
+            print(len(s))
+        case '4':
+            if s:
+                print(0)
+            else:
+                print(1)
+        case '5':
+            if s:
+                print(s[-1])
+            else:
+                print(-1)
