@@ -9,7 +9,7 @@ class Solution {
                 }
             }
             b = b.replace("*", "");
-            if (b.equals("")) {
+            if (b == "") {
                 cnt++;
             }
         }
