@@ -8,6 +8,7 @@ public class Main {
 	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) throws IOException {
 		new Main().solution();
+        br.close();
 	}
 
 	private void solution() throws NumberFormatException, IOException {
