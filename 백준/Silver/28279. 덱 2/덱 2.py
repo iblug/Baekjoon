@@ -4,6 +4,7 @@ input = sys.stdin.readline
 
 N = int(input())
 s = deque()
+r = []
 for _ in range(N):
     c = input().split()
     match (c[0]):
@@ -13,28 +14,30 @@ for _ in range(N):
             s.appendleft(c[1])
         case '3':
             if s:
-                print(s.pop())
+                r.append(s.pop())
             else:
-                print(-1)
+                r.append('-1')
         case '4':
             if s:
-                print(s.popleft())
+                r.append(s.popleft())
             else:
-                print(-1)
+                r.append('-1')
         case '5':
-            print(len(s))
+            r.append(str(len(s)))
         case '6':
             if s:
-                print(0)
+                r.append('0')
             else:
-                print(1)
+                r.append('1')
         case '7':
             if s:
-                print(s[-1])
+                r.append(s[-1])
             else:
-                print(-1)
+                r.append('-1')
         case '8':
             if s:
-                print(s[0])
+                r.append(s[0])
             else:
-                print(-1)
+                r.append('-1')
+
+print('\n'.join(r))
