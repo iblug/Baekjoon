@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) throws IOException {
 		new Main().solution();
 		br.close();
@@ -13,7 +14,8 @@ public class Main {
 		int T = Integer.parseInt(br.readLine());
 		for (int i = 1; i <= T; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			System.out.printf("Case #%d: %d\n",i, Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken()));
+			sb.append("Case #").append(i).append(": ").append(Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken())).append("\n");
 		}
+		System.out.println(sb);
 	}
 }
