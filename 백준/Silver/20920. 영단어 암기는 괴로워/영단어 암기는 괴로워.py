@@ -7,6 +7,6 @@ for _ in range(N):
     a = input().rstrip()
     if len(a) >= M:
         d[a] = d.get(a, 0) + 1
-d = sorted(d.items(), key=lambda x: (-x[1], -len(x[0]), x[0]))
+d = sorted(d, key=lambda x: (-d[x], -len(x), x))
 for e in d:
-    print(e[0])
+    print(e)
