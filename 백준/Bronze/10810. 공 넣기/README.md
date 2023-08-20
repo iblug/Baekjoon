@@ -1,14 +1,14 @@
-# [Bronze II] 공 넣기 - 10810 
+# [Bronze III] 공 넣기 - 10810 
 
 [문제 링크](https://www.acmicpc.net/problem/10810) 
 
 ### 성능 요약
 
-메모리: 31256 KB, 시간: 44 ms
+메모리: 14296 KB, 시간: 140 ms
 
 ### 분류
 
-구현(implementation), 시뮬레이션(simulation)
+구현, 시뮬레이션
 
 ### 문제 설명
 
