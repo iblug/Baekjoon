@@ -1,10 +1,6 @@
 N, K = map(int, input().split())
 d = list(map(int, input().split()))
-i = 0
-j = K
-s = [sum(d[i:j])]
-while (j < N):
-    s.append(s[i] + d[j] - d[i])
-    j += 1
-    i += 1
+s = [sum(d[:K])]
+for k in range(N-K):
+    s.append(s[k]-d[k]+d[k+K])
 print(max(s))
