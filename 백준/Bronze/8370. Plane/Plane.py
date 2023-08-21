@@ -1,2 +1,2 @@
-n = iter(map(int, input().split()))
-print(next(n)*next(n) + next(n)*next(n))
+n = list(map(int, input().split()))
+print(n[0]*n[1] + n[2]*n[3])
