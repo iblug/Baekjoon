@@ -6,19 +6,15 @@ public class Main {
 	}
 	private void solution() throws IOException {
 		int N = readInt();
-		int[] arr = new int[N];
 		int M = 0;
-		int i, t;
-		for (i = 0; i < N; i++) {
+		int t;
+		float s = 0;
+		for (int i = 0; i < N; i++) {
 			t = readInt();
 			M = Math.max(M, t);
-			arr[i] = t;
+			s += t;
 		}
-		float s = 0;
-		for (i = 0; i < N; i++) {
-			s += ((float) arr[i] / M)*100;
-		}
-		System.out.println(s/N);
+		System.out.println(s/M/N*100);
 		
 	}
 	private static int readInt() throws IOException {
