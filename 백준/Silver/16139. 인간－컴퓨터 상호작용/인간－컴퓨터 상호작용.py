@@ -1,21 +1,19 @@
 import sys
+
 input = sys.stdin.readline
 
-from collections import defaultdict
-
-s = input().rstrip()
-q = int(input())
-
-d = defaultdict(lambda: [0]*len(s))
-
-for i, e in enumerate(s):
-    for j in range(i, len(s)):
-        d[e][j] += 1
-for _ in range(q):
-    a, l, r = input().split()
-    l = int(l)
-    r = int(r)
-    if l > 0:
-        print(d[a][r] - d[a][l-1])
+name = input().strip()
+n = int(input())
+arr = [[0 for i in range(26)] for i in range(len(name))]
+arr[0][ord(name[0]) - 97] = 1
+for i in range(1, len(name)):
+    arr[i][ord(name[i]) - 97] = 1
+    for j in range(26):
+        arr[i][j] += arr[i - 1][j]
+for i in range(n):
+    a = input().split()
+    if int(a[1]) > 0:
+        res = arr[int(a[2])][ord(a[0]) - 97] - arr[int(a[1]) - 1][ord(a[0]) - 97]
     else:
-        print(d[a][r])
+        res = arr[int(a[2])][ord(a[0]) - 97]
+    print(res)
