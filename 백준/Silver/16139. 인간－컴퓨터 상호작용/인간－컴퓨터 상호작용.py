@@ -1,19 +1,30 @@
 import sys
-
 input = sys.stdin.readline
 
-name = input().strip()
-n = int(input())
-arr = [[0 for i in range(26)] for i in range(len(name))]
-arr[0][ord(name[0]) - 97] = 1
-for i in range(1, len(name)):
-    arr[i][ord(name[i]) - 97] = 1
-    for j in range(26):
-        arr[i][j] += arr[i - 1][j]
-for i in range(n):
-    a = input().split()
-    if int(a[1]) > 0:
-        res = arr[int(a[2])][ord(a[0]) - 97] - arr[int(a[1]) - 1][ord(a[0]) - 97]
+s = input().rstrip()
+q = int(input())
+
+d = {}
+
+for i, e in enumerate(s):
+    if e not in d:
+        d[e] = [0]*len(s)
+    d[e][i] = 1
+
+for v in d.values():
+    for i in range(1, len(v)):
+        v[i] += v[i-1]
+
+for _ in range(q):
+    a, l, r = input().split()
+    l = int(l)
+    r = int(r)
+    
+    if a not in d:
+        print(0)
+        continue
+        
+    if l > 0:
+        print(d[a][r] - d[a][l-1])
     else:
-        res = arr[int(a[2])][ord(a[0]) - 97]
-    print(res)
+        print(d[a][r])
