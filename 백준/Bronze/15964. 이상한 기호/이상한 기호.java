@@ -6,10 +6,10 @@ public class Main {
 	}
 
 	private void solution() throws IOException {
-		int a = readInt();
-		int b = readInt();
-		
-		System.out.println(a*a - b*b);
+		long a = readInt();
+		long b = readInt();
+
+		System.out.println(a * a - b * b);
 	}
 
 	private int readInt() throws IOException {
@@ -17,7 +17,7 @@ public class Main {
 		while ((v = System.in.read()) > 47) {
 			t = t * 10 + (v - 48);
 		}
-		
+
 		return t;
 	}
 }
