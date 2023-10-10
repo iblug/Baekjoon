@@ -1,6 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class Main {
 
@@ -10,15 +8,18 @@ public class Main {
 
 	private void solution() throws IOException {
 		int n = readInt();
-		ArrayList<Integer> x = new ArrayList<>();
-		ArrayList<Integer> y = new ArrayList<>();
+		int minX, minY, maxX, maxY;
+		minX = minY = 10000;
+        maxX = maxY = -10000;
 		for (int i = 0; i < n; i++) {
-			int a = readInt();
-			int b = readInt();
-			x.add(a);
-			y.add(b);
+			int x = readInt();
+			int y = readInt();
+			if (minX > x) minX = x;
+            if (minY > y) minY = y;
+            if (maxX < x) maxX = x;
+            if (maxY < y) maxY = y;
 		}
-		System.out.println(Math.abs(Collections.max(x) - Collections.min(x)) * Math.abs(Collections.max(y) - Collections.min(y)));
+		System.out.println((maxX - minX) * (maxY - minY));
 	}
 
 	private int readInt() throws IOException {
