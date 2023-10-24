@@ -1,10 +1,5 @@
-import sys
-input = sys.stdin.readline
-
-n = int(input())
-for _ in range(n):
-    s = input().strip()
-    match s:
+for i in [*open(0)][1:]:
+    match i.rstrip():
         case 'Algorithm': print(204)
         case 'DataAnalysis': print(207)
         case 'ArtificialIntelligence': print(302)
