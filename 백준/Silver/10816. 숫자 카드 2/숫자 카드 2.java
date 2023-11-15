@@ -1,9 +1,6 @@
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 public class Main {
-	static StringTokenizer st;
-
 	public static void main(String[] args) throws IOException {
 		new Main().solution();
 	}
