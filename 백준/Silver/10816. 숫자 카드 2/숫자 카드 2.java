@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -14,28 +13,19 @@ public class Main {
 
 	private void solution() throws IOException {
 		br.readLine();
-		HashMap<String, Integer> map = new HashMap<>();
-		String s;
+		int[] a = new int[20000001];
+		int i;
 		st = new StringTokenizer(br.readLine());
 		while (st.hasMoreTokens()) {
-			s = st.nextToken();
-			if (map.containsKey(s)) {
-				map.put(s, map.get(s) + 1);
-			} else {
-				map.put(s, 1);
-			}
+			i = Integer.parseInt(st.nextToken());
+			a[i+10000000]++;
 		}
 		br.readLine();
 		StringBuilder sb = new StringBuilder();
 		st = new StringTokenizer(br.readLine());
 		while (st.hasMoreTokens()) {
-			s = st.nextToken();
-			if (map.containsKey(s)) {
-				sb.append(map.get(s));
-			} else {
-				sb.append(0);
-			}
-			sb.append(" ");
+			i = Integer.parseInt(st.nextToken());
+			sb.append(a[i+10000000]).append(" ");
 		}
 		System.out.println(sb);
 
