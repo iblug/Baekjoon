@@ -13,16 +13,12 @@ public class Main {
 	private void solution() throws IOException {
 		String s = br.readLine();
 		HashSet<String> set = new HashSet<>();
-		int c = 0;
 		for (int i = 0; i < s.length(); i++) {
 			for (int j = i + 1; j < s.length() + 1; j++) {
 				String t = s.substring(i, j);
-				if (!set.contains(t)) {
-					set.add(t);
-					c++;
-				}
+				set.add(t);
 			}
 		}
-		System.out.println(c);
+		System.out.println(set.size());
 	}
 }
