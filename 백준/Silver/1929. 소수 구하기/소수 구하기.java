@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -11,14 +10,13 @@ public class Main {
 		int b = readInt();
 		boolean[] f = new boolean[b+1];
 		
-		Arrays.fill(f, true);
-		f[0] = false;
-		f[1] = false;
+		f[0] = true;
+		f[1] = true;
 		
 		for (int i = 1; i < Math.sqrt(b) + 1; i++) {
-			if (f[i]) {
+			if (!f[i]) {
 				for (int j = i*2; j <= b; j += i) {
-					f[j] = false;
+					f[j] = true;
 				}
 			}
 		}
@@ -32,7 +30,7 @@ public class Main {
 			a++;
 		}
 		for (int i = a; i <= b; i += 2) {
-			if (f[i]) {
+			if (!f[i]) {
 				sb.append(i).append("\n");
 			}
 		}
