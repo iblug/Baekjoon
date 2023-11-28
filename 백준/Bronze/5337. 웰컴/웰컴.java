@@ -4,8 +4,6 @@ public class Main {
 	}
 
 	private void solution() {
-		System.out.println(".  .   .\n"
-				+ "|  | _ | _. _ ._ _  _\n"
-				+ "|/\\|(/.|(_.(_)[ | )(/.");
+		System.out.println(".  .   .\n|  | _ | _. _ ._ _  _\n|/\\|(/.|(_.(_)[ | )(/.");
 	}
 }
