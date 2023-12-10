@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 n = int(input())
 for _ in range(n):
-    a, b = input().rstrip().split()
+    a, b = input().split()
     if a == b:
         print('OK')
     else:
