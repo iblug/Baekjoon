@@ -1,19 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-s = 0
-t = 101
-for _ in range(4):
-    n = int(input())
-    if n < t:
-        t = n
-    s += n
-s -= t
-t = 101
-for _ in range(2):
-    n = int(input())
-    if n < t:
-        t = n
-    s += n
-s -= t
-print(s)
+a = [int(input()) for _ in range(6)]
+b = sorted(a[:4]) 
+
+print(sum(b[1:]) + max(a[4:]))
