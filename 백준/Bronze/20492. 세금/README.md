@@ -4,11 +4,15 @@
 
 ### 성능 요약
 
-메모리: 31256 KB, 시간: 40 ms
+메모리: 14108 KB, 시간: 124 ms
 
 ### 분류
 
 사칙연산, 수학
+
+### 제출 일자
+
+2024년 1월 3일 09:19:59
 
 ### 문제 설명
 
@@ -25,7 +29,7 @@
 
 ### 입력 
 
- <p>상금의 금액을 나타내는 하나의 정수 <mjx-container class="MathJax" jax="CHTML" style="font-size: 108.9%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$N$</span></mjx-container>이 주어진다.</p>
+ <p>상금의 금액을 나타내는 하나의 정수 <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$N$</span></mjx-container>이 주어진다.</p>
 
 ### 출력 
 
