@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         int n = readInt(), m = readInt(), r = readInt();
-        visited = new int[n+1];
+        visited = new int[n + 1];
         graph = new ArrayList<>();
         sb = new StringBuilder();
         for (int i = 0; i <= n; i++) {
@@ -45,14 +45,27 @@ public class Main {
     }
 
     private static int readInt() throws IOException {
-        int v, t = 0;
-        while ((v = System.in.read()) > 47) {
-            t = 10 * t + (v - 48);
-        }
-        if (v == 13) {
-            System.in.read();
-        }
+        int t = 0;
+        byte v;
+        while ((v = read()) <= 32);
+        do t = (t << 3) + (t << 1) + (v & 15);
+        while (isNumber(v = read()));
         return t;
+    }
+
+    static final int SIZE = 1 << 13;
+    static byte[] buffer = new byte[SIZE];
+    static int index, size;
+    private static byte read() throws IOException {
+        if (index == size) {
+            size = System.in.read(buffer, index = 0, SIZE);
+            if (size < 0) buffer[0] = -1;
+        }
+        return buffer[index++];
+    }
+
+    static boolean isNumber(byte c) {
+        return 47 < c && c < 58;
     }
 
 }
