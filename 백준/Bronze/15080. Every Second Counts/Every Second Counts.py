@@ -1,5 +1,5 @@
-s = input().replace(' ', '').split(':')
-t = input().replace(' ', '').split(':')
+s = input().split(':')
+t = input().split(':')
 a, b, c = map(int, s)
 d, e, f = map(int, t)
 ss = a*3600 + b*60 + c
