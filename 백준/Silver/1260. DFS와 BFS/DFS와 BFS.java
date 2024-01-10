@@ -2,15 +2,11 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
-    List<List<Integer>> graph;
-    boolean[] visited;
-    StringBuilder sb;
+    private static List<List<Integer>> graph;
+    private static boolean[] visited;
+    private static StringBuilder sb;
 
     public static void main(String[] args) throws IOException {
-        new Main().solution();
-    }
-
-    private void solution() throws IOException {
         sb = new StringBuilder();
         graph = new ArrayList<>();
         int n = readInt(), m = readInt(), r = readInt();
@@ -35,7 +31,7 @@ public class Main {
         System.out.println(sb);
     }
 
-    void dfs(int r) {
+    private static void dfs(int r) {
         visited[r] = true;
         sb.append(r).append(' ');
         for (int i = 0; i < graph.get(r).size(); i++) {
@@ -46,7 +42,7 @@ public class Main {
         }
     }
 
-    void bfs(int r) {
+    private static void bfs(int r) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(r);
         visited[r] = true;
