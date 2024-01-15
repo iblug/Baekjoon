@@ -7,14 +7,12 @@ import java.util.StringTokenizer;
 
 public class Main {
     static BufferedReader br;
-    static int[][] graph;
     static int[] visited;
     static int N, K;
 
     static public void main(String[] args) throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        graph = new int[100001][];
         visited = new int[100001];
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
