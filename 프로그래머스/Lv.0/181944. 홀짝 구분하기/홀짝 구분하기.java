@@ -6,12 +6,8 @@ public class Solution {
         int n = sc.nextInt();
         
         StringBuilder sb = new StringBuilder();
-        sb.append(n).append(" is ");
-        if ((n & 1) == 1) {
-            sb.append("odd");
-        } else {
-            sb.append("even");
-        }
+        sb.append(n).append(" is ").append((n & 1) == 1 ? "odd" : "even");
+        
         System.out.print(sb);
     }
 }
