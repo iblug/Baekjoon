@@ -1,11 +1,21 @@
 class Solution {
     public String solution(int[] numLog) {
         StringBuilder answer = new StringBuilder();
-        int start = numLog[0];
-        for (int n : numLog) {
-            int g = n - start;
-            answer.append(g == 1 ? 'w' : g == -1 ? 's' : g == 10 ? 'd' : g == -10 ? 'a' : "");
-            start = n;
+        for (int i = 0; i < numLog.length -1; i++) {
+            switch (numLog[i+1] - numLog[i]) {
+                case 1:
+                    answer.append('w');
+                    break;
+                case -1:
+                    answer.append('s');
+                    break;
+                case 10:
+                    answer.append('d');
+                    break;
+                case -10:
+                    answer.append('a');
+                    break;
+            }
         }
         return answer.toString();
     }
