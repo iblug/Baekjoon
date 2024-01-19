@@ -33,12 +33,13 @@ public class Main {
     }
 
     private static int readInt() throws IOException {
-        int t = 0;
+        int value = 0;
         byte v;
-        while ((v = read()) <= 32);
-        do t = (t << 3) + (t << 1) + (v & 15);
-        while (isNumber(v = read()));
-        return t;
+        while ((v = read()) <= ' ') ;
+        do {
+            value = value * 10 + v - '0';
+        } while ((v = read()) >= '0' && v <= '9');
+        return value;
     }
 
     static final int SIZE = 1 << 13;
@@ -50,9 +51,5 @@ public class Main {
             if (size < 0) buffer[0] = -1;
         }
         return buffer[index++];
-    }
-
-    static boolean isNumber(byte c) {
-        return 47 < c && c < 58;
     }
 }
