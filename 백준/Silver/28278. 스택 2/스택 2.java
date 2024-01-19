@@ -14,11 +14,7 @@ public class Main {
                     s.push(b);
                     break;
                 case 2:
-                    if (s.isEmpty()) {
-                        sb.append("-1\n");
-                    } else {
-                        sb.append(s.pop()).append("\n");
-                    }
+                    sb.append(s.isEmpty() ? "-1" : s.pop()).append("\n");
                     break;
                 case 3:
                     sb.append(s.size()).append("\n");
@@ -35,14 +31,28 @@ public class Main {
         }
         System.out.println(sb);
     }
-    static int readInt() throws IOException {
-        int v, t = 0;
-        while ((v = System.in.read()) > 47) {
-            t = t * 10 + (v - 48);
-        }
-        if (v == 13) {
-            System.in.read();
-        }
+
+    private static int readInt() throws IOException {
+        int t = 0;
+        byte v;
+        while ((v = read()) <= 32);
+        do t = (t << 3) + (t << 1) + (v & 15);
+        while (isNumber(v = read()));
         return t;
+    }
+
+    static final int SIZE = 1 << 13;
+    static byte[] buffer = new byte[SIZE];
+    static int index, size;
+    private static byte read() throws IOException {
+        if (index == size) {
+            size = System.in.read(buffer, index = 0, SIZE);
+            if (size < 0) buffer[0] = -1;
+        }
+        return buffer[index++];
+    }
+
+    static boolean isNumber(byte c) {
+        return 47 < c && c < 58;
     }
 }
