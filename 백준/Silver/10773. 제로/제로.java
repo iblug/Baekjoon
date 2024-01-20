@@ -13,7 +13,12 @@ public class Main {
             }
             s.push(a);
         }
-        System.out.println(s.stream().mapToInt(Integer::intValue).sum());
+
+        int sum = 0;
+        for (int i : s) {
+            sum += i;
+        }
+        System.out.println(sum);
     }
 
     private static int readInt() throws IOException {
