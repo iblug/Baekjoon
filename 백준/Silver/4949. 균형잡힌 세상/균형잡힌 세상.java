@@ -1,10 +1,11 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Main {
-    static Stack<Character> stk;
+    static Deque<Character> stk;
     static BufferedReader br;
 
     public static void main(String[] args) throws IOException {
@@ -12,7 +13,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         while (true) {
-            stk = new Stack<>();
+            stk = new ArrayDeque<>();
             boolean flag = true;
             String line = br.readLine();
             if (line.equals(".")) {
