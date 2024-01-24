@@ -1,12 +1,13 @@
 import java.io.IOException;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         int n = readInt();
         int cnt = 1;
-        Stack<Integer> stk = new Stack<>();
+        Deque<Integer> stk = new ArrayDeque<>();
         boolean flag = true;
         int current = readInt();
         while (cnt <= n && current != 0) {
@@ -14,7 +15,7 @@ public class Main {
                 cnt++;
                 current = readInt();
             } else if (stk.isEmpty()) {
-                stk.add(current);
+                stk.push(current);
                 current = readInt();
             } else if (stk.peek() == cnt) {
                 stk.pop();
@@ -23,7 +24,7 @@ public class Main {
                 flag = false;
                 break;
             } else {
-                stk.add(current);
+                stk.push(current);
                 current = readInt();
             }
         }
