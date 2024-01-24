@@ -31,14 +31,24 @@ public class Main {
         System.out.println(flag ? "Nice" : "Sad");
     }
 
-    static int readInt() throws IOException {
-        int v, t = 0;
-        while ((v = System.in.read()) > 47) {
-            t = t * 10 + (v - 48);
+    private static int readInt() throws IOException {
+        int value = 0;
+        byte v;
+        while ((v = read()) <= ' ') ;
+        do {
+            value = value * 10 + v - '0';
+        } while ((v = read()) >= '0' && v <= '9');
+        return value;
+    }
+
+    static final int SIZE = 1 << 13;
+    static byte[] buffer = new byte[SIZE];
+    static int index, size;
+    private static byte read() throws IOException {
+        if (index == size) {
+            size = System.in.read(buffer, index = 0, SIZE);
+            if (size < 0) buffer[0] = -1;
         }
-        if (v == 13) {
-            System.in.read();
-        }
-        return t;
+        return buffer[index++];
     }
 }
