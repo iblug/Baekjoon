@@ -1,8 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -15,14 +16,14 @@ public class Main {
         for (int i = 1; i <= n; i++) {
             q.offer(i);
         }
-        int c = k - 1;
-        List<Integer> answer = new ArrayList<>();
-        while (!q.isEmpty()) {
+        StringBuilder answer = new StringBuilder("<");
+        while (q.size() > 1) {
             for (int i = 0; i < k - 1; i++) {
                 q.offer(q.poll());
             }
-            answer.add(q.poll());
+            answer.append(q.poll()).append(", ");
         }
-        System.out.println((answer.stream().map(String::valueOf).collect(Collectors.joining(", ", "<", ">"))));
+        answer.append(q.poll()).append(">");
+        System.out.println(answer);
     }
 }
