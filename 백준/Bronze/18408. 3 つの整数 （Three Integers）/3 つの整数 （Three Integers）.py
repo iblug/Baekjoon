@@ -1,0 +1,1 @@
+print('12'[sum(map(int, input().split()))>4])
