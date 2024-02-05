@@ -1,2 +1,2 @@
 a = sorted(map(int, input().split()))
-print(sum(a) - a[0])
+print(a[1] + a[2])
