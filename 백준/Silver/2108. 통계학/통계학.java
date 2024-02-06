@@ -40,19 +40,26 @@ public class Main {
         System.out.println(sb);
     }
 
-    static int readInt() throws IOException {
-        int v, t = 0;
-        boolean f = false;
-        while ((v = System.in.read()) > 32) {
-            if (v == '-') {
-                f = true;
-                continue;
-            }
-            t = t * 10 + (v - 48);
+    private static int readInt() throws IOException {
+        int t = 0;
+        byte v;
+        while ((v = read()) <= 32);
+        boolean negative = (v == '-');
+        if (negative) v = read();
+        do {
+            t = t * 10 + (v - '0');
+        } while ((v = read()) >= '0' && v <= '9');
+        return (negative) ? -t : t;
+    }
+    
+    static final int SIZE = 1 << 13;
+    static byte[] buffer = new byte[SIZE];
+    static int index, size;
+    private static byte read() throws IOException {
+        if (index == size) {
+            size = System.in.read(buffer, index = 0, SIZE);
+            if (size < 0) buffer[0] = -1;
         }
-        if (v == 13) {
-            System.in.read();
-        }
-        return f ? -t : t;
+        return buffer[index++];
     }
 }
