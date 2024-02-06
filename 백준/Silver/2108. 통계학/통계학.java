@@ -4,18 +4,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         int n = readInt();
-        int sum = 0, min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        int sum = 0;
         List<Integer> list = new ArrayList<>();
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < n; i++) {
             int num = readInt();
             sum += num;
-            if (num < min) {
-                min = num;
-            }
-            if (num > max) {
-                max = num;
-            }
+
             list.add(num);
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
@@ -35,31 +30,24 @@ public class Main {
         sb.append(Math.round((float) sum/n)).append("\n");
         sb.append(list.get(n/2)).append("\n");
         sb.append(freqList.size() > 1 ? freqList.get(1) : freqList.get(0)).append("\n");
-        sb.append(max - min);
+        sb.append(list.get(n-1) - list.get(0));
 
         System.out.println(sb);
     }
 
-    private static int readInt() throws IOException {
-        int t = 0;
-        byte v;
-        while ((v = read()) <= 32);
-        boolean negative = (v == '-');
-        if (negative) v = read();
-        do {
-            t = t * 10 + (v - '0');
-        } while ((v = read()) >= '0' && v <= '9');
-        return (negative) ? -t : t;
-    }
-    
-    static final int SIZE = 1 << 13;
-    static byte[] buffer = new byte[SIZE];
-    static int index, size;
-    private static byte read() throws IOException {
-        if (index == size) {
-            size = System.in.read(buffer, index = 0, SIZE);
-            if (size < 0) buffer[0] = -1;
+    static int readInt() throws IOException {
+        int v, t = 0;
+        boolean f = false;
+        while ((v = System.in.read()) > 32) {
+            if (v == '-') {
+                f = true;
+                continue;
+            }
+            t = t * 10 + (v - 48);
         }
-        return buffer[index++];
+        if (v == 13) {
+            System.in.read();
+        }
+        return f ? -t : t;
     }
 }
