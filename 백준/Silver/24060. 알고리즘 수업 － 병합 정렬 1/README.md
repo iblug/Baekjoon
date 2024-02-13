@@ -1,14 +1,18 @@
-# [Silver IV] 알고리즘 수업 - 병합 정렬 1 - 24060 
+# [Silver III] 알고리즘 수업 - 병합 정렬 1 - 24060 
 
 [문제 링크](https://www.acmicpc.net/problem/24060) 
 
 ### 성능 요약
 
-메모리: 90308 KB, 시간: 2692 ms
+메모리: 26284 KB, 시간: 472 ms
 
 ### 분류
 
-구현(implementation), 재귀(recursion), 정렬(sorting)
+구현, 재귀, 정렬
+
+### 제출 일자
+
+2024년 2월 13일 10:31:31
 
 ### 문제 설명
 
