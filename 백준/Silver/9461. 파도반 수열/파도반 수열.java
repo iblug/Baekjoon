@@ -10,10 +10,12 @@ public class Main {
         dp[2] = 1;
         int t = readInt();
 
+        StringBuilder sb = new StringBuilder();
         while (t-- > 0) {
             int n = readInt();
-            System.out.println(f(n - 1));
+            sb.append(f(n - 1)).append('\n');
         }
+        System.out.println(sb);
     }
 
     static long f(int n) {
