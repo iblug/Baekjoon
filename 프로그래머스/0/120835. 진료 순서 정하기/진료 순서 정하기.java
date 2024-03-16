@@ -1,17 +1,5 @@
 import java.util.Arrays;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println(
-                Arrays.toString(
-                        new Solution().solution(
-                                new int[]{30, 10, 23, 6, 100}
-                        )
-                )
-        );
-    }
-}
-
 class Solution {
     public int[] solution(int[] emergency) {
         int len = emergency.length;
