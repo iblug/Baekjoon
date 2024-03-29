@@ -15,6 +15,9 @@ public class Main {
         while (n-- > 0) {
             r += k / arr[n];
             k %= arr[n];
+            if (k == 0) {
+                break;
+            }
         }
 
         System.out.println(r);
