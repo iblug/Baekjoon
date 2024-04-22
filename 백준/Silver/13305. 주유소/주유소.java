@@ -16,8 +16,8 @@ public class Main {
 
         int idx = 0;
         int min_price = price[0];
-        int result = 0;
-        int sum = 0;
+        long result = 0;
+        long sum = 0;
         while (idx < n - 1) {
             if (min_price >= price[idx + 1]) {
                 sum += dis[idx];
