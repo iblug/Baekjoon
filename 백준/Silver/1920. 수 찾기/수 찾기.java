@@ -17,8 +17,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < M; i++) {
-            int t = readInt();
-            sb.append(Arrays.binarySearch(arr, t) >= 0 ? 1 : 0).append('\n');
+            sb.append(Arrays.binarySearch(arr, readInt()) >= 0 ? 1 : 0).append('\n');
         }
 
         System.out.println(sb);
