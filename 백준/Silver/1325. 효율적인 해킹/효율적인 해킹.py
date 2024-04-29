@@ -18,15 +18,17 @@ def bfs(x):
 
 n, m = map(int, input().split())
 graph = [[] for _ in range(n+1)]
+c = set()
 for _ in range(m):
     a, b = map(int, input().split())
     graph[b].append(a)
+    c.add(b)
+c = sorted(c)
 
 result = []
-
 max = 0
 result = []
-for i in range(1, n+1):
+for i in c:
     cnt = bfs(i)
     if max < cnt:
         max = cnt
