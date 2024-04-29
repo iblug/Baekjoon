@@ -9,8 +9,10 @@ public class Main {
         
         data = new int[K];
         long max = 0;
+        int temp;
         for (int i = 0; i < K; i++) {
-            data[i] = readInt();
+            temp = readInt();
+            data[i] = temp;
             max = Math.max(max, data[i]);
         }
 
