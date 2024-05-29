@@ -24,9 +24,6 @@ public class Main {
         while ((v = System.in.read()) > 47) {
             t = 10 * t + (v - 48);
         }
-        if (v == 13) {
-            System.in.read();
-        }
 
         return t;
     }
