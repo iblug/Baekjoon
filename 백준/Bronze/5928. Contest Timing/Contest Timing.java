@@ -3,12 +3,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         int t = (readInt()-11)*1440+(readInt()-11)*60+readInt()-11;
-        if (t >= 0) {
-            System.out.println(t);
-        } else {
-            System.out.println(-1);
-        }
-        System.out.println();
+        System.out.println(t < 0 ? -1 : t);
     }
 
     static int readInt() throws IOException {
