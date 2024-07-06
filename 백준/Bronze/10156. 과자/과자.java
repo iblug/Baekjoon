@@ -3,7 +3,8 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         int k = readInt(), n = readInt(), m = readInt();
-        System.out.println(Math.max(0, k*n - m));
+        int p = k*n;
+        System.out.println(m > p ? 0 : p - m);
     }
 
     static int readInt() throws IOException {
