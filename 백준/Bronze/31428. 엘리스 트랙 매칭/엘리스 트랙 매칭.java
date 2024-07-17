@@ -7,11 +7,11 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        br.readLine();
+        int n = Integer.parseInt(br.readLine());
         int r = 0;
         StringTokenizer st = new StringTokenizer(br.readLine());
         String h = br.readLine();
-        while (st.hasMoreTokens()) {
+        for (int i = 0; i < n; i++) {
             if (Objects.equals(st.nextToken(), h)) {
                 r++;
             }
