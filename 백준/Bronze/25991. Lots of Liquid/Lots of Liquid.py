@@ -1,4 +1,2 @@
 input()
-a = list(map(float, input().split()))
-
-print(sum(map(lambda x: x**3, a))**(1/3))
+print(sum(map(lambda x: x**3, map(float, input().split())))**(1/3))
